@@ -1,0 +1,42 @@
+version: '3'
+services:
+    node:
+        build: .
+        container_name: 'myapp_practica'
+        ports:
+            - '83:3000'
+        networks:
+            - network_practica
+    prometheus:
+        ports:
+            - '9090:3000'
+        container_name: 'prometheus_practica'
+        image: 'prom/prometheus:v2.20.1'
+        volumes:
+            - "./prometheus:/etc/prometheus"
+        command: --config.file=/etc/prometheus/prometheus.yml
+        networks: 
+            - network_practica
+        depends_on: 
+            - node
+    grafana:
+        depends_on:
+            - prometheus
+        ports:
+            - '3500:3500'
+        container_name: 'grafana_practica'
+        image: 'grafana/grafana:7.1.5'
+        environment: 
+            - GF_AUTH_DISABLE_LOGIN_FORM=true
+            - GF_AUTH_ANONYMOUS_ENABLED=true
+            - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+            - GF_INSTALL_PLUGINS=grafana-clock-panel 1.0.1
+        networks: 
+            - network_practica
+        volumes:
+            - 'myGrafanaVol:/var/lib/grafana'
+            - './grafana:/etc/grafana/provision/datasources'
+networks:
+    network_practica:
+volumes:
+    myGrafanaVol:
