@@ -139,3 +139,12 @@ volumes:
 El servicio de Grafana quedaria de la siguiente forma:
 
 (Captura servicio Grafana)
+
+Adjunto comprobación del funcionamiento del servicio de Node.
+(Captura html Node)
+
+Adjunto comprobación del funcionamiento del servicio Prometheus.
+(Captura html Prometheus)
+
+Adjunto comprobación del funcionamiento del servicio Grafana.
+(Captura html Grafana)
