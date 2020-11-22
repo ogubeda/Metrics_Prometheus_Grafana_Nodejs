@@ -31,34 +31,33 @@ El propósito de esta práctica es que mediante un contendor donde residirá la 
 
 Empezaremos creando el fichero Dockerfile, y añadiremos los comandos necesarios, que serán:
 
-FROM mhart/alpine-node -> Especificaremos la imagen que utilizaremos.
+**FROM mhart/alpine-node** -> Especificaremos la imagen que utilizaremos.
 
-WORKDIR /myapp -> Establecemos el directorio de trabajo.
+**WORKDIR /myapp** -> Establecemos el directorio de trabajo.
 
-COPY ./src/ . -> Copiamos el contenido de nuestro directorio src al directorio de trabajo.
+**COPY ./src/ .** -> Copiamos el contenido de nuestro directorio src al directorio de trabajo.
 
-EXPOSE 3000 -> Exponemos el puerto 3000 de la aplicación.
+**EXPOSE 3000** -> Exponemos el puerto 3000 de la aplicación.
 
-RUN npm install -> Ejecutamos la siguiente instrucción para instalar los paquetes necesarios.
+**RUN npm install** -> Ejecutamos la siguiente instrucción para instalar los paquetes necesarios.
 
-CMD ["node", "app.js"] -> Y para finalizar lanzaremos la aplicación.
+**CMD ["node", "app.js"]** -> Y para finalizar lanzaremos la aplicación.
 
 El fichero Dockerfile quedaria de la siguiente forma.
 
 ![alt text](./images/imagen12.png)
 
-Una vez lo tengamos listo, crearemos el fichero docker-compose.yml. Al crear el fichero hay unos valores que son obligatorios, como: version y services.
+Una vez lo tengamos listo, crearemos el fichero `docker-compose.yml`. Al crear el fichero hay unos valores que son obligatorios, como: `version y services`.
 
 Valor de version:
 
-` version: 3 `
+`version: 3`
 
 Y ahora crearemos el primer servicio que será el de Node. Asignaremos el nombre que queramos al servicio, que en este caso será node, y añadiremos la instrucción `build .` para que cree la imagen a partir del Dockerfile que hemos creado antes. Expondremos el puerto mediante:
 
-`
-ports: 
-    - '83:8080'
-`
+`ports:'` 
+`- '83:8080'`
+
 Y haremos que forme parte de la red "network_practica" mediante:
 
 `networks:`
