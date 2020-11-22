@@ -87,7 +87,7 @@ El servicio de Prometheus dependerá del servicio de Node que hemos creado antes
 
 El puerto por defecto de Prometheus es el 9090 y tendremos que enlazarlo a ese mismo puerto en nuestra máquina local, para ello añadiremos la siguiente línea:
 
-`ports:&nbsp;
+`ports:`<br>
 `- '9090:9090'`
 
 Le asignaremos el nombre "prometheus_practica" al contenedor:
