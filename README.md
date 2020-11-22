@@ -63,6 +63,7 @@ Y haremos que forme parte de la red "network_practica" mediante:
 
 `networks:`
 `    - 'network_practica'`
+
 Aunque hay que crear la red, para ello a la altura de services y version añadiremos:
 `
 networks:
