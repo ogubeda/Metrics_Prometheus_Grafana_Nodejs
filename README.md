@@ -1,3 +1,34 @@
+# Docker Compose
+
+## Parte teórica
+
+### ¿Que es Docker?
+
+Docker es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software. Docker usa el kernel de Linux y las funcionesde este, para segregar los procesos, de modo que puedan ejecutarse manera dindependiente. El propósito de los contendores es esta independencia: la capacidad de ejecutar varios procesos y aplicaciones por separado para hacer un mejor usos de su infraestructura y, al mismo tiempo, conservar la seguridad que tendría con sistemas separados.
+
+Las herramientas del contenedor, ofrecen un modelo de implementación basado en imágenes. Esto permite compartir una aplicación, o un conjunto de servicios, con todas sus dependencias en varios entornos.
+
+### ¿Que es Docker Compose?
+
+Docker Compose es una herramienta que permite simplificar el uso de Docker. A partir de archivos YAML es más sencillo crear contenedores, conectarlos, habilitar puertos, volumenes, etc. Aquí resumimos algunos tipos.
+Se pueden crear diferentes contenedores y al mismo tiempo, en cada contenedor, diferentes servicios, unirlos a un volúmen común, inicarlos y apagarlos, etc. Es un componente fundamental para poder contruir aplicaciones y microservicios.
+
+### ¿Que es Prometheus?
+
+Prometheus es una base de serie de tiempo y un sistema de monitoreo y alertas. Las series de tiempo almacenan datos ordenados cronológicamente, midiendo variables a lo largo del tiempo y las bases de datos enfocadas a series de tiempo son especialmente eficientes en almacenar y consultar estos datos.
+
+La arquitectura de Prometheus almacena todas las muestras recortadas localmente y ejecuta reglas sobre estos datos para agregar y registrar nuevas series temporales a partir de datos existentes o para generar alertas. Prometheus elimina las métricas de los trabajos instrumentados, ya sea directamente o a través de un Gateway de inserción intermedia para trabajos de poca duración.
+
+### ¿Que es Grafana?
+
+Grafana es una herramienta para visualizar datos de serie temporales. A partir de una serie de datos recolectados se obtiene un panorama gráfico de la situación muy simple de interpretar y visualizar, se utiliza para el monitoreo de infraestructura de IT, mediciones de aplicaciones, control de procesos, sensores industriales, automatización de hogares y medición del clima entre otros usos.
+
+### Propósito
+
+El propósito de esta práctica es que mediante un contendor donde residirá la aplicación, otro donde residirá Prometheus y por último otro donde residirá Grafana, enlazarlos de tal forma que se pueda comprobar y mostrar de forma gráfica las conexiones que se realizan a los endpoints de la aplicación de Node.
+
+## Parte práctica
+
 Empezaremos creando el fichero Dockerfile, y añadiremos los comandos necesarios, que serán:
 
 1. FROM mhart/alpine-node
