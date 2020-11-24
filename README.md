@@ -55,8 +55,7 @@ Valor de version:
 
 Y ahora crearemos el primer servicio que será el de Node. Asignaremos el nombre que queramos al servicio, que en este caso será node, y añadiremos la instrucción `build .` para que cree la imagen a partir del Dockerfile que hemos creado antes. Expondremos el puerto mediante:
 
-`ports:`\
-
+`ports:`<br/>
 `- '83:8080'`
 
 Y haremos que forme parte de la red "network_practica" mediante:
