@@ -179,7 +179,19 @@ Adjunto comprobación del funcionamiento del servicio Prometheus.
 
 Adjunto comprobación del funcionamiento del servicio Grafana.
 
-![alt text](./images/imagen7.png)
+![alt text](./images/imagen13.png)
 
 Ahora tendremos que crear los paneles para poder monitorizar las peticiones que reciba nuestra aplicación. Para ello haremos click **Create Dashboard**
 ![alt text](./images/imagen7.png)
+
+En la nueva pantalla que nos salga haremos click en **Add New Panel**
+![alt text](./images/imagen8.png)
+
+Para que seleccione nuestros endpoints en el apartado **Metrics** seleccionaremos el contador que hayamos configuracido con Prometheus. Crearemos uno para `messages`.
+![alt text](./images/imagen9.png)
+
+Y otro para `home`.
+![alt text](./images/imagen10.png)
+
+También crearemos un contador de los dos endpoints.
+![alt text](./images/imagen14.png)
