@@ -200,5 +200,49 @@ También crearemos un contador de los dos endpoints.
 
 Empezaremos copiando los directorios de Grafana y Prometheus dentro de nuestra carpeta backend.
 
-//
+Y ajustaremos los nombres de los archivos de configuración.
+
+Prometheus:
+
+![alt text](./images/imagen20.png)
+
+Grafana:
+
+![alt text](./images/imagen19.png)
+
+Y añadiremos los servicios de Grafana y Prometheus como lo tenemos en el fichero docker-compose.yml anterior, junto con el volumen y la red.
+
+![alt text](./images/imagen15.png)
+
+Los servicios de GraphQL y Rest los añadiremos también a la red.
+
+
+![alt text](./images/imagen16.png)
+
+Una vez finalizado añadiremos la dependencia `prom-client": "^12.0.0` a los `package.json` de los backends. Y lanzaremos el comando `npm install` para instalar las dependencias.
+
+Daremos de alta la ruta en `api/routes/index.js`, y crearemos el fichero `metrics.js` donde estableceremos la ruta.
+
+![alt text](./images/imagen17.png)
+
+En el fichero de las rutas donde queramos realizar el conteo añadiremos las siguientes líneas.
+
+![alt text](./images/imagen18.png)
+
+Y añadiremos los contadores en los endpoints correspondientes.
+
+Comprobación en Prometheus:
+
+![alt text](./images/captura22.png)
+
+Comprobación en `/metrics`:
+
+![alt text](./images/imagen21.png)
+
+Y añadiremos un panel para comprobar las peticiones:
+
+![alt text](./images/imagen23.png)
+
+
+
 
