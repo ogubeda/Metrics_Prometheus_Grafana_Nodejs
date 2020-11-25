@@ -195,3 +195,10 @@ Y otro para `home`.
 
 También crearemos un contador de los dos endpoints.
 ![alt text](./images/imagen14.png)
+
+## Añadir contadores al proyecto de Servidor
+
+Empezaremos copiando los directorios de Grafana y Prometheus dentro de nuestra carpeta backend.
+
+//
+
